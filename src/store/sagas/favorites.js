@@ -1,12 +1,11 @@
-import { call, put } from "redux-saga/effects";
+import { call, put } from 'redux-saga/effects';
 
-import api from "../../services/api";
+import api from '../../services/api';
 
-import { addFavoriteSuccess, addFavoriteFailure } from "../actions/favorites";
+import { addFavoriteSuccess, addFavoriteFailure } from '../actions/favorites';
 
 export function* addFavorite(action) {
   try {
-    console.log(`/repos/${action.payload.repository}`);
     const { data } = yield call(api.get, `/repos/${action.payload.repository}`);
 
     const repositoryData = {
@@ -18,6 +17,6 @@ export function* addFavorite(action) {
 
     yield put(addFavoriteSuccess(repositoryData));
   } catch (err) {
-    yield put(addFavoriteFailure("erro ao add"));
+    yield put(addFavoriteFailure('erro ao add'));
   }
 }
