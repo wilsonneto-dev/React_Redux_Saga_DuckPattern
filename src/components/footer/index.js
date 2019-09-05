@@ -8,7 +8,7 @@ const Footer = props => {
     <p>
       vc tem {props.count} {props.loading && <span>(Carregando...)</span>}{' '}
       repos.
-      <span>{props.error}</span>
+      <span>{!!props.error ? props.error : ''}</span>
     </p>
   );
 };
