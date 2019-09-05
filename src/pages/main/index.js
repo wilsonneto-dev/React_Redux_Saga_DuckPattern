@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import PropTypes from 'prop-types';
 
-import * as FavoritesActions from '../../store/actions/favorites';
+import { Creators as FavoritesActions } from '../../store/ducks/favorites';
 
 class Main extends Component {
   constructor() {
